@@ -4,4 +4,3 @@ model/submit.csv
 model/vectorizer.pkl
 model/vectorizer.pickle
 model/fake-news-model.pickle
-server/*
