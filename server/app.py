@@ -1,17 +1,18 @@
 from flask import Flask, request
 # for converting texts->numbers for model
 import re #regex
+import nltk
 # natural language tool kit
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 # sklearn
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 import pickle,os
 app = Flask(__name__)
 
 
 def stemming(content):
+    stopwords=nltk.download("stopwords")
     port_stem = PorterStemmer()
     stemmed_content = re.sub('[^a-zA-Z]',' ',content) # we just want words without special characters and digits
     stemmed_content = stemmed_content.lower() # make it  all lower
